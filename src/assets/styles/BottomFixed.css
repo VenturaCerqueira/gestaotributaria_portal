@@ -1,0 +1,72 @@
+.fixed-button, .fixed-button-nfse, .fixed-button-protocolo {
+    position: fixed; 
+    right: 20px; 
+    color: #f5f5f5;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    z-index: 1000; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px; 
+    height: 70px; 
+    overflow: hidden; 
+    white-space: nowrap; 
+}
+
+.fixed-button .button-text, .fixed-button-nfse .button-text, .fixed-button-protocolo .button-text {
+    opacity: 0; 
+    margin-left: 10px; 
+    transition: opacity 0.3s;
+    display: none;
+}
+
+.fixed-button:hover, .fixed-button-nfse:hover, .fixed-button-protocolo:hover {
+    transform: translateY(-3px); 
+    width: 160px; 
+    padding: 10px 15px; 
+    border-radius: 25px; 
+    justify-content: flex-start; 
+}
+
+.fixed-button:hover .button-text, .fixed-button-nfse:hover .button-text, .fixed-button-protocolo:hover .button-text {
+    opacity: 1; 
+    display: inline; 
+}
+
+.fixed-button i, .fixed-button-nfse i, .fixed-button-protocolo i {
+    font-size: 1.2rem;
+}
+
+.fixed-button {
+    bottom: 100px; 
+    background: linear-gradient(135deg, #0052cc, #007bff); 
+}
+
+.fixed-button:hover {
+    background: linear-gradient(135deg, #007bff, #0052cc); 
+}
+
+.fixed-button-nfse {
+    bottom: 180px; 
+    background: linear-gradient(135deg, #28a745, #218838); 
+}
+
+.fixed-button-nfse:hover {
+    background: linear-gradient(135deg, #218838, #28a745); 
+}
+
+.fixed-button-protocolo {
+    bottom: 260px; 
+    background: linear-gradient(135deg, #ffc107, #e0a800); 
+}
+
+.fixed-button-protocolo:hover {
+    background: linear-gradient(135deg, #e0a800, #ffc107); 
+}

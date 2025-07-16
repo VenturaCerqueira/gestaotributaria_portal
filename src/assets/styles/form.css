@@ -1,0 +1,280 @@
+/* --- Container Geral --- */
+.form-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    /* Limita a largura */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Título Principal --- */
+.form-title {
+    color: #0052cc;
+    /* Azul vibrante */
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* --- Formulário Geral --- */
+.form {
+    gap: 10px;
+    /* Espaçamento entre os elementos */
+    background: #f8f8f8;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    /* Limita o formulário */
+    margin-bottom: 20px;
+    /* Espaçamento inferior */
+}
+
+
+/* --- Inputs --- */
+input[type="text"],
+input {
+    width: 100%;
+    /* Ocupa toda a largura disponível */
+    padding: 12px 15px;
+    font-size: 16px;
+    color: #495057;
+    /* Cinza escuro */
+    border: 1px solid #ccc;
+    /* Borda cinza clara */
+    border-radius: 6px;
+    /* Bordas arredondadas */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra interna */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder {
+    color: #adb5bd;
+    /* Placeholder cinza claro */
+    font-style: italic;
+}
+
+input:focus {
+    border-color: #007bff;
+    /* Azul ao focar */
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    /* Realce ao focar */
+}
+
+/* --- Grupo de Botões --- */
+.button-group {
+    display: flex;
+    /* Alinha os botões lado a lado */
+    gap: 10px;
+    /* Espaçamento entre botões */
+    justify-content: flex-start;
+    /* Alinha à esquerda */
+    align-items: center;
+    /* Centraliza verticalmente */
+    flex-wrap: wrap;
+    /* Permite quebra de linha em telas menores */
+}
+
+/* Botões ao passar o mouse */
+button:hover,
+.emitir-btn:hover,
+.action-btn:hover {
+    background-color: #0056b3;
+    /* Azul mais escuro */
+    transform: scale(1.05);
+    /* Aumenta levemente no hover */
+}
+
+/* Botões desabilitados */
+button:disabled,
+.emitir-btn:disabled,
+.action-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #d6d6d6;
+    /* Cinza claro */
+    color: #999;
+    /* Texto cinza */
+}
+
+/* Ícones nos Botões */
+button .icon,
+.action-btn .button-icon {
+    margin-right: 8px;
+    /* Espaçamento entre ícone e texto */
+    font-size: 18px;
+}
+
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    border: none;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+    /* Leve aumento no hover */
+}
+
+/* Botão Imprimir */
+.print-btn {
+    background-color: #28a745;
+    /* Verde */
+}
+
+.print-btn:hover {
+    background-color: #19692c;
+    /* Verde mais escuro */
+}
+
+.btn-form {
+    display: flex;
+    align-items: center;
+    background-color: #0052cc;
+    /* Azul padrão */
+    color: #fff;
+    /* Texto branco */
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    cursor: pointer;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    gap: 5px;
+    flex: 1;
+}
+
+/* --- PDF Viewer --- */
+.pdf-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+    /* Limita a largura */
+    height: 600px;
+    /* Altura padrão */
+    border: 1px solid #ccc;
+    /* Borda cinza clara */
+    border-radius: 6px;
+    /* Bordas arredondadas */
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+}
+
+.tabela-wrapper {
+    margin-top: 30px;
+    width: 100%;
+    overflow-x: auto;
+    /* Permite rolagem horizontal */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra leve */
+}
+
+.tabela-resultados {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1100px;
+    /* Tamanho mínimo */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Destaque */
+}
+
+.tabela-resultados th {
+    background-color: #0052cc;
+    /* Fundo azul */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.tabela-resultados td {
+    border: 1px solid #ccc;
+    /* Borda clara */
+    text-align: center;
+    padding: 10px;
+}
+
+.tabela-resultados tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Linhas alternadas */
+}
+
+.tabela-resultados tr:hover {
+    background-color: #f1f1f1;
+    /* Destaque no hover */
+}
+
+/* --- Responsividade --- */
+
+/* Telas menores (768px) */
+@media (max-width: 768px) {
+    .form-container {
+        align-items: center;
+        /* Centraliza no mobile */
+    }
+
+    .form {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input {
+        font-size: 14px;
+        /* Reduz o tamanho da fonte */
+    }
+
+    button {
+        font-size: 14px;
+        /* Texto menor nos botões */
+        padding: 10px 15px;
+        /* Botões menores */
+    }
+
+    .tabela-resultados th,
+    .tabela-resultados td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Telas muito pequenas (480px) */
+@media (max-width: 480px) {
+    .form-title {
+        font-size: 36px;
+        /* Reduz tamanho do título */
+    }
+
+    .pdf-container {
+        height: 500px;
+        /* Reduz altura do PDF */
+    }
+
+    .tabela-resultados th,
+    .tabela-resultados td {
+        font-size: 12px;
+        padding: 6px;
+    }
+}

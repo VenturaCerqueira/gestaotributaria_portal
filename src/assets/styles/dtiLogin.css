@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap'); 
+
+/* Definição de Variáveis CSS */
+:root {
+    --dti-primary-color: #1e88e5;
+    --dti-primary-color-dark: #1565c0;
+    --dti-text-light: #ffffff;
+    --dti-text-dark: #333333;
+    --dti-text-muted: #757575;
+    --dti-text-link: #555555; 
+    --dti-background-light: #ffffff;
+    --dti-input-background: #f0f4ff;
+    --dti-border-radius-main: 25px;
+    --dti-border-radius-button: 8px;
+    --dti-font-family: 'Montserrat', sans-serif;
+    --dti-transition-speed: 0.6s;
+    --dti-transition-timing: ease-in-out;
+    --dti-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Container principal do componente */
+.dti-login-container {
+    background-color: var(--dti-background-light);
+    border-radius: var(--dti-border-radius-main);
+    box-shadow: var(--dti-box-shadow);
+    position: relative;
+    overflow: hidden;
+    /* Largura Responsiva */
+    width: 70%;
+    min-width: 320px;   
+    max-width: 850px;
+    min-height: 520px;
+    transition: width var(--dti-transition-speed) var(--dti-transition-timing),
+                min-height var(--dti-transition-speed) var(--dti-transition-timing),
+                all var(--dti-transition-speed) var(--dti-transition-timing);
+    font-family: var(--dti-font-family);
+    color: var(--dti-text-dark);
+    margin: 2rem auto;
+}
+
+/* Tipografia e Textos */
+.dti-login-title {
+    color: var(--dti-primary-color);
+    font-size: 2.3rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    line-height: 1.2;
+}
+.dti-login-title-icon { font-size: 1.8rem; line-height: 1; margin-top: -2px; }
+
+.dti-login-welcome { 
+    font-size: 2.2rem; /* Aumentado */
+    font-weight: 700; 
+    color: var(--dti-text-light);
+    margin-bottom: 0.8rem;
+    text-align: center;
+    line-height: 1.3;
+    padding: 0 1rem;
+}
+
+.dti-login-content p,
+.dti-login-toggle-panel p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+    margin: 1rem 0 1.5rem;
+    text-align: center;
+    padding: 0 1rem;
+    max-width: 320px;
+}
+.dti-login-content p { color: var(--dti-text-muted); }
+.dti-login-toggle-panel p { color: rgba(255, 255, 255, 0.9); }
+
+/* Formulários e Inputs */
+.dti-login-form {
+    background-color: var(--dti-background-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 3rem; 
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.dti-login-label { display: flex; align-items: center; margin-bottom: 1rem; width: 100%; }
+.dti-login-icon { margin-right: 1rem; color: var(--dti-primary-color); font-size: 1.3rem; flex-shrink: 0; }
+.dti-login-input {
+    background-color: var(--dti-input-background);
+    border: 1px solid #e0e0e0;
+    padding: 0.9rem 1rem;
+    font-size: 0.9rem;
+    border-radius: var(--dti-border-radius-button);
+    width: 100%;
+    outline: none;
+    color: var(--dti-text-dark);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.dti-login-input::placeholder { color: var(--dti-text-muted); }
+.dti-login-input:focus { border-color: var(--dti-primary-color); box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.15); }
+
+/* Estilos de Botão */
+.dti-login-button {
+    font-family: inherit;
+    font-size: 0.85rem;
+    padding: 0.8rem 2.5rem;
+    border-radius: var(--dti-border-radius-button);
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-top: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 2px solid transparent;
+    line-height: 1.2;
+    background-color: transparent; /* Fundo transparente por padrão */
+    color: var(--dti-text-dark); /* Cor padrão escura */
+}
+.dti-login-button:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+.dti-login-button:active { transform: translateY(0px) scale(0.98); box-shadow: none; }
+
+/* Botão Primário (azul) */
+.dti-login-button.dti-login-button-primary {
+    background-color: var(--dti-primary-color);
+    color: var(--dti-text-light);
+    border-color: var(--dti-primary-color);
+}
+.dti-login-button.dti-login-button-primary:hover {
+    background-color: var(--dti-primary-color-dark);
+    border-color: var(--dti-primary-color-dark);
+}
+
+/* Botão "Fantasma" (toggle) */
+.dti-login-button.dti-login-button-ghost {
+    background-color: transparent;
+    color: var(--dti-text-light);
+    border-color: var(--dti-text-light);
+}
+.dti-login-button.dti-login-button-ghost:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--dti-text-light);
+}
+
+/* --- ESTILO BOTÃO VOLTAR --- */
+.dti-login-button.dti-login-back-button {
+    background-color: transparent;
+    color: var(--dti-text-link); /* Cor de link/texto secundário */
+    border-color: transparent; /* Sem borda */
+    font-weight: 500; /* Peso normal */
+    text-transform: none; /* Sem uppercase */
+    letter-spacing: normal;
+    font-size: 0.8rem; 
+    padding: 0.5rem 1rem; /* Menor padding */
+    margin-top: 0.8rem; /* Espaço acima */
+    box-shadow: none; 
+}
+.dti-login-button.dti-login-back-button:hover {
+    color: var(--dti-primary-color); /* Muda cor no hover */
+    background-color: transparent;
+    transform: none; /* Sem efeito de elevação */
+    box-shadow: none;
+    text-decoration: underline; 
+}
+
+
+
+/* Estrutura e Animação (Lógica de visibilidade do toggle mantida) */
+.dti-login-form-container { position: absolute; top: 0; height: 100%; transition: all var(--dti-transition-speed) var(--dti-transition-timing); display: flex; align-items: center; justify-content: center; width: 50%; }
+.dti-login-sign-in { left: 0; z-index: 2; }
+.dti-login-sign-up { left: 0; opacity: 0; z-index: 1; }
+.dti-login-container.dti-login-active .dti-login-sign-in { transform: translateX(100%); opacity: 0; z-index: 1; }
+.dti-login-container.dti-login-active .dti-login-sign-up { transform: translateX(100%); opacity: 1; z-index: 5; animation: showPanel var(--dti-transition-speed) var(--dti-transition-timing); }
+@keyframes showPanel { 0%, 49.99% { opacity: 0; z-index: 1; } 50%, 100% { opacity: 1; z-index: 5; } }
+.dti-login-toggle-container { position: absolute; top: 0; left: 50%; width: 50%; height: 100%; overflow: hidden; transition: all var(--dti-transition-speed) var(--dti-transition-timing); border-radius: 150px 0 0 100px; z-index: 10; }
+.dti-login-container.dti-login-active .dti-login-toggle-container { transform: translateX(-100%); border-radius: 0 150px 100px 0; }
+.dti-login-toggle { background: linear-gradient(to right, var(--dti-primary-color), var(--dti-primary-color-dark)); position: relative; left: -100%; height: 100%; width: 200%; transform: translateX(0); transition: all var(--dti-transition-speed) var(--dti-transition-timing); }
+.dti-login-toggle-panel { position: absolute; width: 50%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 3rem; text-align: center; top: 0; transition: all var(--dti-transition-speed) var(--dti-transition-timing); color: var(--dti-text-light); }
+.dti-login-toggle-left { transform: translateX(0%); } 
+.dti-login-container.dti-login-active .dti-login-toggle-left { transform: translateX(100%); } 
+.dti-login-toggle-right { transform: translateX(100%); left: 0; } 
+.dti-login-container.dti-login-active .dti-login-toggle-right { transform: translateX(200%); } 
+
+
+/* --- RESPONSIVIDADE REFINADA --- */
+/* Telas Pequenas (Celulares) */
+@media (max-width: 767px) {
+    .dti-login-container {
+        width: 92%; /* Pouco mais largo */
+        min-height: auto;
+        margin: 1rem auto; /* Menor margem vertical */
+        border-radius: 20px; /* Raio ligeiramente menor */
+    }
+
+    /* Ajusta padding interno para dar mais espaço */
+    .dti-login-form,
+    .dti-login-toggle-panel {
+        padding: 0 1.5rem;
+    }
+
+    .dti-login-title { font-size: 1.6rem; gap: 0.4rem; margin-bottom: 1rem; }
+    .dti-login-title-icon { font-size: 1.3rem; }
+    .dti-login-welcome { font-size: 1.5rem; margin-bottom: 0.6rem; font-weight: 700; } /* Mantém forte */
+    .dti-login-content p, .dti-login-toggle-panel p { font-size: 0.85rem; margin-bottom: 1.2rem; line-height: 1.5; max-width: 100%; }
+    .dti-login-label { margin-bottom: 0.9rem; } /* Aumenta um pouco o espaço */
+    .dti-login-icon { font-size: 1.2rem; margin-right: 0.8rem; } /* Ícone um pouco maior */
+    .dti-login-input { padding: 0.85rem 1rem; font-size: 0.85rem; } /* Input um pouco maior */
+    .dti-login-button { font-size: 0.75rem; padding: 0.75rem 1.8rem; margin-top: 1rem; letter-spacing: 0.6px; } /* Botões ajustados */
+    .dti-login-button.dti-login-back-button { font-size: 0.75rem; margin-top: 0.5rem; }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+     .dti-login-container {
+        width: 80%; /* Ocupa mais espaço que em desktop grande */
+        max-width: 700px; /* Limita para não ficar tão largo quanto 768px base */
+    }
+     .dti-login-form,
+     .dti-login-toggle-panel {
+        padding: 0 2rem; /* Padding intermediário */
+    }
+     .dti-login-title { font-size: 2rem; } /* Tamanho intermediário */
+     .dti-login-welcome { font-size: 1.8rem; font-weight: 700; } /* Mantém forte */
+     
+}
+
+
+
+/* Telas Extra Largas (Opcional) */
+@media (min-width: 1400px) {
+     .dti-login-container {
+         max-width: 900px; /* Aumenta um pouco o limite */
+     }
+     .dti-login-form,
+     .dti-login-toggle-panel {
+         padding: 0 3.5rem; /* Mais padding interno */
+     }
+    
+}

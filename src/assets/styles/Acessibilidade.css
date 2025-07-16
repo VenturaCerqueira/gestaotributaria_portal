@@ -1,0 +1,16 @@
+.top-accessibility-bar {
+  background-color: #f5f5f5;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.top-accessibility-bar a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.top-accessibility-bar a:hover {
+  text-decoration: underline;
+}

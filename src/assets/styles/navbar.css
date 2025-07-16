@@ -1,0 +1,141 @@
+/* === Configuração Geral da Navbar === */
+.navbar {
+    position: fixed; /* Navbar fixa no topo */
+    top: 0; /* Alinhada ao topo */
+    left: 0; /* Alinhada à esquerda */
+    width: 100%; /* Ocupa toda a largura */
+    z-index: 1000; /* Mantém acima dos outros elementos */
+   
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(243, 242, 242, 0.2); /* Sombra inicial */
+}
+
+/* Efeito ao rolar a página */
+.navbar.scrolled {
+    background: linear-gradient(135deg, #0052cc, #007bff); /* Gradiente ao rolar */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
+}
+
+/* Conteúdo centralizado */
+.navbar .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Itens do menu */
+.navbar-nav {
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Remove os bullets */
+}
+
+/* Links do menu */
+.navbar .nav-link {
+    text-decoration: none; /* Remove o sublinhado */
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase; /* Texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+/* Ícones nos links */
+.navbar .nav-link i {
+    margin-right: 8px; /* Espaçamento entre ícone e texto */
+}
+
+/* Efeito ao passar o mouse */
+.navbar .nav-link:hover {
+    color: #f0f0f0; /* Cor mais clara no hover */
+}
+
+/* Dropdown geral */
+.navbar .dropdown-menu {
+    background-color: #007bff; /* Cor azul no menu dropdown */
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Evita estouro do menu */
+    display: none; /* Esconde o dropdown por padrão */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px; /* Largura mínima */
+    z-index: 1000;
+}
+
+/* Exibir dropdown no hover */
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Itens dentro do dropdown */
+.navbar .dropdown-menu .dropdown-item {
+    color: white;
+    font-size: 14px;
+    padding: 10px 15px;
+    text-decoration: none; /* Remove sublinhado */
+    display: block;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Hover nos itens do dropdown */
+.navbar .dropdown-menu .dropdown-item:hover {
+    background-color: #0052cc; /* Azul escuro no hover */
+}
+
+/* Botão de colapso para mobile */
+.navbar-toggler {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Ícone no botão de colapso */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+/* Efeitos de responsividade */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 8px 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Menu vertical */
+    }
+
+    .dropdown-menu {
+        position: static; /* Fixa o menu */
+        display: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block; /* Mostra o dropdown no clique */
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-link {
+        font-size: 12px; /* Texto menor para telas pequenas */
+        padding: 8px 12px; /* Ajusta o padding */
+    }
+}

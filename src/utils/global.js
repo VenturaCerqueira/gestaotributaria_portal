@@ -1,0 +1,2 @@
+export const entidadeUrl = window.location.pathname.split('/')[2];
+export const fullUrl = `${(!entidadeUrl || entidadeUrl == '' || entidadeUrl.length < 0) ? import.meta.env.VITE_PUBLIC_URL : (import.meta.env.VITE_PUBLIC_URL + '/' + entidadeUrl)}`;

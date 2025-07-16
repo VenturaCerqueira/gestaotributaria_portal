@@ -1,0 +1,163 @@
+/* Estilo geral do header */
+.custom-header {
+  display: flex;
+  flex-direction: column; /* Organização em coluna */
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Espaçamento interno */
+  width: 100%; /* Ocupa toda a largura */
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Logotipo */
+.custom-logo {
+  position: absolute; /* Permite posicionamento dinâmico */
+  top: 20px; /* Ajusta a distância do topo */
+  left: 20px; /* Ajusta a distância da esquerda */
+  max-height: 80px; /* Limita a altura máxima */
+  padding-top: 20px;
+  padding-left: 15px;
+}
+
+.custom-logo img {
+  height: 80px; /* Altura da logo */
+  max-width: 100%; /* Mantém responsividade */
+}
+
+.header-title {
+  font-size: 2rem; /* O tamanho será 4% da largura da tela */
+  font-weight: 600; /* Peso da fonte */
+  color: #f5f5f5; /* Branco */
+  text-align: center; /* Centralizado */
+  text-transform: uppercase; /* Texto em maiúsculas */
+  margin: 0; /* Remove margens padrão */
+  padding-top: 20px; /* Espaçamento superior */
+  z-index: 1; /* Garante visibilidade sobre outros elementos */
+  position: relative; /* Para centralização visual */
+}
+/* Ícones sociais */
+.icon-container {
+  position: absolute; /* Posicionamento dinâmico */
+  top: 20px; /* Distância do topo */
+  right: 20px; /* Distância da direita */
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espaçamento entre os ícones */
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+/* Estilo dos ícones */
+.icon-container a {
+  color: #f5f5f5; /* Branco padrão */
+  font-size: 2rem; /* Aumentando o tamanho dos ícones */
+  text-decoration: none; /* Remove sublinhado */
+  transition: color 0.3s ease, transform 0.3s ease; /* Transição suave de cor e transformação */
+}
+
+/* Animação ao passar o mouse */
+.icon-container a:hover {
+  color: #e6e6e6; /* Cor mais clara ao passar o mouse */
+  transform: scale(1.2); 
+}
+
+
+/* Seção de local e data */
+.location-date {
+  font-size: 0.85rem; /* Fonte menor */
+  color: #f5f5f5; /* Branco */
+  text-align: center; /* Alinha o texto à direita */
+  margin-top: 10px; /* Espaçamento superior */
+  margin-right: 20px; /* Espaçamento da lateral direita */
+  text-transform: uppercase; /* Deixa o texto em maiúsculas */
+}
+
+.parent-container {
+  display: flex;
+  justify-content: flex-end; /* Move o conteúdo para a direita */
+  padding-right: 20px; /* Espaçamento lateral */
+}
+
+
+.location-date {
+  font-size: 0.85rem;
+  text-align: center;
+  color: #f5f5f5;
+  text-transform: uppercase; /* Deixa o texto todo em maiúsculas */
+  margin-top: 10px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 800px) {
+  .custom-header {
+    padding: 2vh 2vw; /* Reduz espaçamento interno lateral */
+    height: 35vh; /* Aumenta a altura do header */
+  }
+  
+
+  .custom-logo {
+    top: 1vh; /* Ajusta a posição superior */
+    left: 2vw; /* Reduz espaçamento lateral */
+    max-height: 12vh; /* Diminui o tamanho da logo */
+  }
+
+  .custom-logo img {
+    height: 6vh; /* Altura da logo menor */
+  }
+
+  .header-title {
+    font-size: 0.9rem;/* Aumenta o tamanho proporcional da fonte */
+    padding-top: 1vh; /* Ajusta o espaçamento superior */
+  }
+
+  .icon-container {
+    top: 0.9vh; /* Ajusta a posição superior */
+    right: 2vw; /* Reduz espaçamento lateral */
+    gap: 1vw; /* Diminui o espaçamento entre ícones */
+  }
+
+  .icon-container a {
+    font-size: 3vw; /* Tamanho maior para facilitar o toque em dispositivos móveis */
+  }
+
+  .location-date {
+    font-size: 1vw; /* Aumenta o tamanho da fonte */
+    margin-right: 2vw; /* Reduz o espaçamento lateral */
+  }
+}
+
+/* Responsividade para telas muito grandes */
+@media (min-width: 1400px) {
+  .custom-header {
+    height: 25vh; /* Altura menor para telas grandes */
+  }
+
+  .custom-logo {
+    top: 3vh; /* Ajusta o espaçamento superior */
+    left: 5vw; /* Aumenta o espaçamento lateral */
+    max-height: 18vh; /* Aumenta o tamanho da logo */
+  }
+
+  .custom-logo img {
+    height: 13vh; /* Aumenta altura da logo */
+  }
+
+  .header-title {
+    font-size: 2.5rem; /* Define tamanho fixo da fonte */
+  }
+
+  .icon-container {
+    top: 3vh; /* Ajusta a posição superior */
+    right: 5vw; /* Aumenta espaçamento lateral */
+  }
+
+  .icon-container a {
+    font-size: 2rem; /* Define tamanho fixo para os ícones */
+  }
+
+  .location-date {
+    font-size: 1rem; /* Define tamanho fixo da fonte */
+    margin-right: 5vw; /* Ajusta espaçamento lateral */
+  }
+}

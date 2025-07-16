@@ -1,0 +1,229 @@
+/* Importa a fonte Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Definição de Variáveis CSS (Estilo DtiLogin) */
+:root {
+    --dti-primary-color: #1e88e5;
+    --dti-primary-color-dark: #1565c0;
+    --dti-text-light: #ffffff;
+    --dti-text-dark: #333333;
+    --dti-text-muted: #757575;
+    --dti-text-link: #555555;
+    --dti-background-light: #ffffff;
+    --dti-input-background: #f0f4ff;
+    --dti-border-color: #e0e0e0;
+    --dti-border-radius-item: 6px;
+    --dti-border-radius-button: 8px;
+    --dti-font-family: 'Montserrat', sans-serif;
+    --dti-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --dti-transition-speed: 0.4s;
+    --dti-transition-timing: ease-in-out;
+}
+
+/* Container principal da Transação */
+.transacao-container {
+    padding: 20px;
+    width: 90%;
+    max-width: 1400px; /* Largura máxima "meio termo" */
+    margin: 1.5rem auto;
+    box-sizing: border-box;
+    font-family: var(--dti-font-family);
+    font-size: 0.95rem;
+    color: var(--dti-text-dark);
+}
+
+/* Cabeçalho */
+.transacao-header {
+    background-color: var(--dti-primary-color);
+    color: var(--dti-text-light);
+    padding: 12px 20px;
+    text-align: left;
+    border-radius: var(--dti-border-radius-item) var(--dti-border-radius-item) 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite quebrar se necessário */
+    gap: 10px; /* Espaço entre título e data se quebrar */
+}
+
+.transacao-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.transacao-header-icon { font-size: 1.1em; }
+.transacao-header-date { font-size: 0.8rem; font-weight: 400; opacity: 0.9; white-space: nowrap; } /* Evita quebra da data */
+
+
+/* Área de Conteúdo Principal */
+.transacao-content {
+    display: flex;
+    gap: 20px; /* Espaçamento "meio termo" */
+    padding: 20px; /* Padding "meio termo" */
+    box-shadow: var(--dti-box-shadow);
+    flex-wrap: wrap;
+    border-radius: 0 0 var(--dti-border-radius-item) var(--dti-border-radius-item);
+    background-color: var(--dti-background-light);
+    border: 1px solid var(--dti-border-color);
+    margin-top: -1px;
+    box-sizing: border-box;
+}
+
+/* Bloco da Lista de Seleção */
+.transacao-selecao {
+    /* --- PROPORÇÃO MEIO TERMO --- */
+    flex: 1; /* Fator de crescimento igual */
+    min-width: 260px;
+    padding: 0;
+    margin-bottom: 0; /* Removido */
+    box-sizing: border-box;
+}
+.transacao-selecao .list-group { padding: 0; list-style: none; margin: 0; }
+
+.transacao-selecao .list-group-item {
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    border: 1px solid var(--dti-border-color);
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    background-color: var(--dti-input-background);
+    color: var(--dti-text-dark);
+    font-weight: 500;
+    border-radius: var(--dti-border-radius-item);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.transacao-selecao .list-group-item:last-child { margin-bottom: 0; }
+
+/* Ícones e Conteúdo do Item da Lista */
+.list-item-content { display: flex; align-items: center; gap: 10px; overflow: hidden; /* Evita que texto longo empurre ícone direito */ }
+.list-item-icon-left { color: var(--dti-primary-color); font-size: 1em; width: 18px; text-align: center; flex-shrink: 0; /* Não encolhe */ }
+.list-item-icon-right { margin-left: 8px; color: var(--dti-text-muted); transition: color 0.2s ease; font-size: 0.9em; flex-shrink: 0; }
+
+/* Efeito Hover nos Itens da Lista */
+.transacao-selecao .list-group-item:hover {
+    transform: translateX(4px);
+    background-color: var(--dti-background-light);
+    color: var(--dti-primary-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-color: var(--dti-primary-color);
+}
+.transacao-selecao .list-group-item:hover .list-item-icon-right { color: var(--dti-primary-color); }
+.transacao-selecao .list-group-item:hover .list-item-icon-left { color: var(--dti-primary-color); }
+
+/* Item Ativo/Selecionado */
+.transacao-selecao .list-group-item.active {
+     background-color: var(--dti-primary-color);
+     color: var(--dti-text-light);
+     border-color: var(--dti-primary-color);
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+     transform: translateX(4px);
+}
+.transacao-selecao .list-group-item.active .list-item-icon-left,
+.transacao-selecao .list-group-item.active .list-item-icon-right {
+    color: var(--dti-text-light);
+}
+
+
+/* Bloco de Detalhes da Transação */
+.transacao-detalhes {
+     /* --- PROPORÇÃO MEIO TERMO --- */
+    flex: 1; /* Fator de crescimento igual */
+    min-width: 260px;
+    background-color: var(--dti-background-light);
+    padding: 20px;
+    border: 1px solid var(--dti-border-color);
+    border-radius: var(--dti-border-radius-item);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--dti-box-shadow);
+    box-sizing: border-box;
+}
+.transacao-detalhes h3 { font-size: 1.15rem; margin-bottom: 12px; color: var(--dti-primary-color); font-weight: 600; }
+.transacao-detalhes p { font-size: 0.9rem; line-height: 1.6; color: var(--dti-text-dark); margin-bottom: 20px; white-space: pre-line; /* Mantém quebras de linha */ }
+
+/* Botões de Ação */
+.transacao-botoes { display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+.transacao-botoes .btn {
+    font-family: var(--dti-font-family);
+    font-size: 0.8rem;
+    padding: 0.7rem 1.8rem;
+    border-radius: var(--dti-border-radius-button);
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 2px solid transparent;
+    line-height: 1.2;
+    flex: 0 1 auto;
+    margin-top: 0;
+}
+.transacao-botoes .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+.transacao-botoes .btn:active { transform: translateY(0px) scale(0.98); box-shadow: none; }
+/* Botão Secundário (Voltar) */
+.transacao-botoes .btn-secondary { background-color: transparent; color: var(--dti-text-link); border-color: var(--dti-border-color); }
+.transacao-botoes .btn-secondary:hover { background-color: rgba(0, 0, 0, 0.05); color: var(--dti-text-dark); border-color: #ccc; }
+/* Botão Primário (Próximo) */
+.transacao-botoes .btn-primary { background-color: var(--dti-primary-color); color: var(--dti-text-light); border-color: var(--dti-primary-color); }
+.transacao-botoes .btn-primary:hover { background-color: var(--dti-primary-color-dark); border-color: var(--dti-primary-color-dark); }
+.transacao-botoes .btn .fa-chevron-left { margin-right: 6px; margin-left: -2px;}
+.transacao-botoes .btn .fa-chevron-right { margin-left: 6px; margin-right: -2px;}
+
+
+/* --- RESPONSIVIDADE "MEIO TERMO" --- */
+@media (max-width: 767px) {
+    .transacao-container { width: 95%; padding: 15px; margin: 1rem auto; }
+    .transacao-header { padding: 10px 15px; flex-direction: column; align-items: flex-start; gap: 4px;}
+    .transacao-header h2 { font-size: 1.05rem; gap: 6px;}
+    .transacao-header-date { font-size: 0.75rem; }
+    .transacao-content { flex-direction: column; padding: 15px; gap: 15px; }
+    .transacao-selecao, .transacao-detalhes { min-width: 100%; flex-basis: auto; padding: 15px; }
+
+    /* Desabilita hover de translação em telas touch */
+    .transacao-selecao .list-group-item:hover { transform: none; }
+    .transacao-selecao .list-group-item.active { transform: none; }
+
+    .transacao-detalhes h3 { font-size: 1.05rem; }
+    .transacao-detalhes p { font-size: 0.85rem; line-height: 1.5; }
+    .transacao-botoes { flex-direction: column; gap: 8px; align-items: stretch; /* Faz botões esticarem */}
+    .transacao-botoes .btn { width: 100%; font-size: 0.75rem; padding: 0.75rem 1.5rem;} /* Ocupa largura total, padding ajustado */
+}
+
+/* Telas Médias (Ajustes para proporção 1:1) */
+@media (min-width: 768px) and (max-width: 1023px) {
+     .transacao-container {
+        width: 90%; /* Pouco mais largo */
+        max-width: 850px; /* Reduzido */
+    }
+     .transacao-content { gap: 15px; padding: 15px; }
+     .transacao-selecao, .transacao-detalhes { min-width: calc(50% - 10px); /* Garante ~50% */ } /* Ajustado min-width */
+     .transacao-form, .transacao-toggle-panel { padding: 0 1.5rem; } /* Padding menor se aplicável (não neste comp) */
+     .transacao-title { font-size: 1.8rem; } /* Exemplo */
+     .transacao-welcome { font-size: 1.6rem; } /* Exemplo */
+}
+
+/* Telas Grandes (Desktop) */
+@media (min-width: 1024px) {
+     /* max-width: 950px; já definido na base */
+}
+
+/* Telas Extra Largas */
+@media (min-width: 1400px) {
+     /* .transacao-container { max-width: 1000px; } /* Opcional */
+     /* .transacao-content { gap: 25px; padding: 25px; } /* Opcional: Aumentar espaço */
+}
+/* --- FIM RESPONSIVIDADE --- */

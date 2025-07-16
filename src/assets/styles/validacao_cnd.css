@@ -1,0 +1,141 @@
+/* --- Container Geral --- */
+.cnd-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Limita a largura */
+  }
+  
+  /* --- Título Principal --- */
+  .cnd-title {
+    color: #0052cc; /* Azul vibrante */
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* --- Formulário Geral --- */
+  .cnd-form {
+    gap: 10px; /* Espaçamento entre os elementos */
+    background: #f8f8f8;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Limita o formulário */
+    margin-bottom: 20px; /* Espaçamento inferior */
+  }
+  
+  /* --- Inputs --- */
+  input[type="text"], input {
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 12px 15px;
+    font-size: 16px;
+    color: #495057; /* Cinza escuro */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 6px; /* Bordas arredondadas */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra interna */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input::placeholder {
+    color: #adb5bd; /* Placeholder cinza claro */
+    font-style: italic;
+  }
+  
+  input:focus {
+    border-color: #007bff; /* Azul ao focar */
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25); /* Realce ao focar */
+  }
+  
+  /* --- Grupo de Botões --- */
+  .button-group {
+    display: flex; /* Alinha os botões lado a lado */
+    gap: 10px; /* Espaçamento entre botões */
+    justify-content: flex-start; /* Alinha à esquerda */
+    align-items: center; /* Centraliza verticalmente */
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+  }
+  
+  /* --- Botões --- */
+  button, .emitir-btn, .action-btn {
+    background-color: #007bff; /* Azul padrão */
+    color: #fff; /* Texto branco */
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px; /* Bordas arredondadas */
+    cursor: pointer;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Botões ao passar o mouse */
+  button:hover, .emitir-btn:hover, .action-btn:hover {
+    background-color: #0056b3; /* Azul mais escuro */
+    transform: scale(1.05); /* Aumenta levemente no hover */
+  }
+  
+  /* Botões desabilitados */
+  button:disabled, .emitir-btn:disabled, .action-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #d6d6d6; /* Cinza claro */
+    color: #999; /* Texto cinza */
+  }
+  
+  /* Ícones nos Botões */
+  button .icon, .action-btn .button-icon {
+    margin-right: 8px; /* Espaçamento entre ícone e texto */
+    font-size: 18px;
+  }
+  
+  /* --- PDF Viewer --- */
+  .pdf-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px; /* Limita a largura */
+    height: 600px; /* Altura padrão */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 6px; /* Bordas arredondadas */
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  /* --- Responsividade --- */
+  
+  /* Telas menores (768px) */
+  @media (max-width: 768px) {
+    .cnd-container {
+      align-items: center; /* Centraliza no mobile */
+    }
+  
+    .cnd-form {
+      max-width: 100%;
+      padding: 20px;
+    }
+  
+    input[type="text"], input {
+      font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+  
+    button, .emitir-btn, .action-btn {
+      font-size: 14px; /* Texto menor nos botões */
+      padding: 10px 15px; /* Botões menores */
+    }
+  }
+  
+  /* Telas muito pequenas (480px) */
+  @media (max-width: 480px) {
+    .cnd-title {
+      font-size: 36px; /* Reduz tamanho do título */
+    }
+  
+    .pdf-container {
+      height: 500px; /* Reduz altura do PDF */
+    }
+  }
+  

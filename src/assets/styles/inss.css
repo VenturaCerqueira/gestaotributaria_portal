@@ -1,0 +1,193 @@
+/* --- Fonte Global --- */
+body {
+  font-family: 'Poppins', sans-serif; /* Aplica Poppins globalmente */
+}
+
+/* --- Container Geral --- */
+.cnd-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+  margin: 0 auto;
+  max-width: 1200px; /* Limita a largura */
+}
+
+/* --- Título Principal --- */
+.cnd-title {
+  color: #0052cc; /* Azul vibrante */
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+/* --- Formulário --- */
+.cnd-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaçamento entre campos */
+  background: #f8f8f8;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Limita a largura do formulário */
+}
+
+/* --- Campos de Input --- */
+.cnd-form input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  color: #555; /* Texto cinza */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f8f8f8;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cnd-form input:focus {
+  border-color: #0052cc; /* Azul ao focar */
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 82, 204, 0.3); /* Brilho ao foco */
+}
+
+.cnd-form input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* --- Botões de Submissão --- */
+.emitir-btn {
+  background-color: #0052cc; /* Azul padrão */
+  color: white;
+  font-size: 16px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.emitir-btn:hover {
+  background-color: #003d99; /* Azul mais escuro no hover */
+  transform: scale(1.05); /* Leve aumento no hover */
+}
+
+/* --- Tabela de Resultados --- */
+.tabela-wrapper {
+  margin-top: 30px;
+  width: 100%;
+  overflow-x: auto; /* Permite rolagem horizontal */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.tabela-resultados {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1100px; /* Tamanho mínimo */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Destaque */
+}
+
+.tabela-resultados th {
+  background-color: #0052cc; /* Fundo azul */
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.tabela-resultados td {
+  border: 1px solid #ccc; /* Borda clara */
+  text-align: center;
+  padding: 10px;
+}
+
+.tabela-resultados tr:nth-child(even) {
+  background-color: #f9f9f9; /* Linhas alternadas */
+}
+
+.tabela-resultados tr:hover {
+  background-color: #f1f1f1; /* Destaque no hover */
+}
+
+/* --- Botões de Ação --- */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  margin: 0 5px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.icon-btn:hover {
+  transform: scale(1.1); /* Leve aumento no hover */
+}
+
+/* Botão Imprimir */
+.print-btn {
+  background-color: #28a745; /* Verde */
+}
+
+.print-btn:hover {
+  background-color: #19692c; /* Verde mais escuro */
+}
+
+/* Rodapé da Tabela */
+.tabela-resultados tfoot {
+  background-color: #0052cc;
+  color: white;
+  font-weight: bold;
+}
+
+.tabela-resultados tfoot td {
+  padding: 10px;
+  text-align: center;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .cnd-container {
+    align-items: center;
+  }
+
+  .cnd-title {
+    font-size: 36px;
+  }
+
+  .cnd-form {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .tabela-resultados th,
+  .tabela-resultados td {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cnd-title {
+    font-size: 28px;
+  }
+
+  .tabela-resultados th,
+  .tabela-resultados td {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
