@@ -56,7 +56,7 @@ Tabela principal que armazena os dados de uma Declaração de Transação Imobil
 | **tipo_imovel** |  `INTEGER` | `NOT NULL` | 1 - urbano e 2 - Rural | 
 | **matricula** | `VARCHAR(20)` | `NULL`                     | Número da matrícula do imóvel no cartório.        |
 | **valor_transacao** | `NUMERIC(15,2)` | `NOT NULL`                 | Valor total da transação. Observação: valor da transação não pode ser diferente do valor (avista + financiado).                         |
-| **numero_transacao** | int(15) | 
+| **numero_transacao** | varchar(15) | Numero gerado aleatorio de 15 caracteres com letras e numeros (alfanumérico), sendo unico, que deverara ser salvo quando usuario confirmar o registro do DTI.   
 | **data_transacao** | `DATE`      | `NOT NULL`                 | Data em que a transação foi realizada.            |
 | **valor_avista** | `NUMERIC(15,2)` | `NOT NULL`                 | Parcela do valor paga à vista.                    |
 | **aliquota_avista** | `NUMERIC(5,2)` | `NOT NULL`                 | Alíquota de ITIV sobre o valor à vista.           |
