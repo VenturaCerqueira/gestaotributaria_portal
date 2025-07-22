@@ -58,7 +58,7 @@ Tabela principal que armazena os dados de uma Declaração de Transação Imobil
 | **valor_transacao** | `NUMERIC(15,2)` | `NOT NULL`                 | Valor total da transação. Observação: valor da transação não pode ser diferente do valor (avista + financiado).                         |
 | **numero_transacao** | varchar(15) | `NOT NULL`| Um código alfanumérico aleatório de 15 caracteres será gerado no momento em que o usuário confirmar o registro do DTI. Este código será único e composto por uma combinação de letras e números, garantindo sua exclusividade e servindo como um identificador para o registro.   |
 | **chave_validacao_declaracao** | `VARCHAR (15)` | `NULL` | Quando a situação do DTI (Documento de Transferência Interna) for alterada para "4 - Transferido/Pago", será gerado um código alfanumérico aleatório de 15 caracteres. Este código combinará letras e números para garantir sua unicidade. |
-| **data_transacao** | `DATE`      | `NOT NULL`                 | Data em que a transação foi realizada.            |
+| **data_transacao** | `DATE`      | `NOT NULL`                 | Data em que a transação foi realizada. Observação/validação: Data não pode ser maior que atual do usuario         |
 | **valor_avista** | `NUMERIC(15,2)` | `NOT NULL`                 | Parcela do valor paga à vista.                    |
 | **aliquota_avista** | `NUMERIC(5,2)` | `NOT NULL`                 | Alíquota de ITIV sobre o valor à vista.           |
 | **valor_financiado** | `NUMERIC(15,2)` | `NOT NULL`                 | Parcela do valor que foi financiada.              |
