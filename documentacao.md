@@ -46,23 +46,25 @@ Tabela principal que armazena os dados de uma Declaração de Transação Imobil
 | Coluna                    | Tipo        | Restrições                 | Descrição                                         |
 |---------------------------|-------------|----------------------------|---------------------------------------------------|
 | **id** | `INTEGER`   | `PRIMARY KEY`              | Identificador único da declaração ITIV.           |
+|**fk_dti_usuario** | `Varchar (15)` | `NOT NULL`, `FK`|Chave estrangeira|
+| **fk_dti_cartorio** | `INTEGER`   | `NULL`, `FK`               | Chave estrangeira para `cartorio.id`.             |
+| **fk_usuario_cancelamento** | `INTEGER`   | `NULL`, `FK`               | Chave estrangeira para `usuario.id` que cancelou. |
 | **fk_dti_tipo_transacao** | `INTEGER`   | `NOT NULL`, `FK`           | Chave estrangeira para `tipo_transacao.id`.       |
 | **fk_imovel** | `INTEGER`   | `NULL`, `FK`           | Chave estrangeira para `imovel.id`. Observação: Ele pode ser null caso tipo imovel seja rural, sera necessario atribuir ao gravar a inscrição como varchar =>(`Zona Rural`), desabilitando o campo inscrição imobiliária, registro em cartório, cartorio de registro e inscrição matricula              |
 | endereco_imovel_rural | text | `NULL` | Serve para usuario descrever endereço, caso endereço seja tipo zona rual, exemplo nome da fazenda. | 
-| **fk_dti_cartorio** | `INTEGER`   | `NULL`, `FK`               | Chave estrangeira para `cartorio.id`.             |
 | **registrado_cartorio** | `BOOLEAN`   | `NOT NULL`                 | Indica se o imóvel tem registro em cartório (Sim/Não).|
 | **tipo_imovel** |  `INTEGER` | `NOT NULL` | 1 - urbano e 2 - Rural | 
 | **matricula** | `VARCHAR(20)` | `NULL`                     | Número da matrícula do imóvel no cartório.        |
-| **valor_transacao** | `NUMERIC(15,2)` | `NOT NULL`                 | Valor total da transação.                         |
+| **valor_transacao** | `NUMERIC(15,2)` | `NOT NULL`                 | Valor total da transação. Observação: valor da transação não pode ser diferente do valor (avista + financiado).                         |
+| **numero_transacao** | int(15) | 
 | **data_transacao** | `DATE`      | `NOT NULL`                 | Data em que a transação foi realizada.            |
 | **valor_avista** | `NUMERIC(15,2)` | `NOT NULL`                 | Parcela do valor paga à vista.                    |
 | **aliquota_avista** | `NUMERIC(5,2)` | `NOT NULL`                 | Alíquota de ITIV sobre o valor à vista.           |
 | **valor_financiado** | `NUMERIC(15,2)` | `NOT NULL`                 | Parcela do valor que foi financiada.              |
 | **aliquota_financiado** | `NUMERIC(5,2)` | `NOT NULL`                 | Alíquota de ITIV sobre o valor financiado.        |
-| **valor_itiv** | `NUMERIC(15,2)` | `NOT NULL`                 | Valor total calculado do imposto ITIV.            |
+| **valor_itiv** | `NUMERIC(15,2)` | `NOT NULL`                 | Valor total calculado do imposto ITIV. Formula: ((Aliquota_avista * valor_Avista)/100) +  ((Aliquota_financiada * valor_financiado)/100) = valor_itiv         |
 | **tipo_instrumento** | `INTEGER`   | `NOT NULL`                 | 1-Particular; 2-Público.                          |
-| **situacao** | `INTEGER`   | `NOT NULL`                 | 1-Aberto; 2-Em Análise; 3-Confirmado; 4-Pago; 5-Cancelado etc. |
-| **fk_usuario_cancelamento** | `INTEGER`   | `NULL`, `FK`               | Chave estrangeira para `usuario.id` que cancelou. |
+| **situacao** | `INTEGER`   | `NOT NULL`                 | 1-Aberto; 2-Em Análise; 3-Confirmado; 4-Transferido/Pago; 5-Cancelado etc. |
 | **data_cancelamento** | `DATETIME`  | `NULL`                     | Data e hora do cancelamento.                      |
 ---
 ### Tabela: `dti_comprador`
